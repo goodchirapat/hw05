@@ -1,0 +1,32 @@
+<style>
+table, th, td{
+    border:1px solid black;
+}
+</style>
+<table>
+    <th>Subject</th>
+    <th>Score</th>
+    <th>Edit</th>
+    <th>Delete</th>
+    <% @allSubjects.each do |s| %>
+        <tr>
+            <td><%= s.name %></td>
+            <td><%= s.score %></td>
+            <td><%= link_to 'Edit', '/score/edit?id=' + s.id.to_s %></td>
+            <td><%= link_to 'Delete', '/score/delete?id=' + s.id.to_s %></td>
+        </tr>
+    <%end%>
+</table>
+<br>
+<br>
+<p> total score  =
+<%=
+    @total
+    
+%></p>
+<p> max score subject =
+<%=
+    @max_sub
+    
+%></p>
+

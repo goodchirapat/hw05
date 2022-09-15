@@ -1,0 +1,11 @@
+<%= form_with url: "/score/save?id=" + @id.to_s, method:'post',data:{turbo:false} do |form| %>
+    <%= form.label :query, "Subject: #{@name}" %><br>
+    <%= form.label :query, "Score: #{@score}" %><br>
+    <%= form.label :query, "Edit Subject" %><br>
+    <%= form.text_field :subject, name: "name" %><br>
+    <%= form.label :query, "Edit Score" %><br>
+    <%= form.number_field :score, name: "score" %><br>
+    
+    <%= form.submit "Save" %><br>
+  <% end %>
+<%= link_to 'Back', '/score/list' %>

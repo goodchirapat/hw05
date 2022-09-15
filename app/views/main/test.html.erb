@@ -1,0 +1,29 @@
+<h1>Main#test</h1>
+<%= form_with url: "/main/test", method:'post',data:{turbo:false} do |form| %>
+    <%= form.label :query, "SUBJECT SCORE" %><br>
+    
+    
+
+<%x = 0 %>
+<%while x < @amount%>
+  <%= form.text_field :subject, name: "subject[]" %>
+  <%= form.number_field :score, name: "score[]" %><br>
+  <%x += 1%>
+<%end%>
+  <%= form.submit "Submit" %>
+  <% end %>
+  <p> amount =
+  <%=
+      @amount
+      
+  %></p><br>
+  <p> no subject at line =
+<%=
+    @subject_check
+    
+%></p>
+<p> no score at line =
+<%=
+    @score_check
+    
+%></p>

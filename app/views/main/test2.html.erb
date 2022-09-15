@@ -1,0 +1,14 @@
+
+<p> no subject at line =
+<%=
+    @subject_check
+    
+%></p>
+<p> no score at line =
+<%=
+    @score_check
+    
+%></p><br>
+<%= form_with url: "/main/test3", method:'post',data:{turbo:false} do |form| %>
+    <%= form.submit "Submit" %><br>
+  <% end %>
